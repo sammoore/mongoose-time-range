@@ -1,0 +1,22 @@
+{
+  "name": "mongoose-time-range",
+  "version": "0.1.0",
+  "description": "A mongoose SchemaType for a range of Time in a given day.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/samtheprogram/mongoose-time-range.git"
+  },
+  "keywords": [
+    "mongoose",
+    "schematype",
+    "time",
+    "range",
+    "date"
+  ],
+  "author": "Sam Moore <samtheprogram@gmail.com>",
+  "license": "Apache-2.0"
+}
