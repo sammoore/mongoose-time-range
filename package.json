@@ -19,6 +19,9 @@
   ],
   "author": "Sam Moore <samtheprogram@gmail.com>",
   "license": "Apache-2.0",
+  "dependencies": {
+    "mongoose-time": "./vendor/mongoose-time"
+  },
   "peerDependencies": {
     "mongoose": "^4.10.0"
   },
