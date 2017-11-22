@@ -1,3 +1,6 @@
 [submodule "vendor/mongoose-time"]
 	path = vendor/mongoose-time
 	url = git@github.com:samtheprogram/mongoose-time.git
+[submodule "vendor/mongoose-array-length-validators"]
+	path = vendor/mongoose-array-length-validators
+	url = git@github.com:samtheprogram/mongoose-array-length-validators.git

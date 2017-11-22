@@ -1,18 +1,24 @@
 'use strict';
 
-const { assign } = Object;
+const { create, assign } = Object;
 
 const mongoose = require('mongoose');
 const Time = require('mongoose-time');
+const arrayLengthValidators = require('mongoose-array-length-validators');
+const { descriptors } = arrayLengthValidators;
 
 class TimeRange extends mongoose.Schema.Types.Array {
   constructor(key, options) {
     super(key, Time, options);
+    validate(key, this);
 
-    this.validate({
-      validator,
-      message: 'Path `{PATH}` must be an ascending range of Dates'
-    });
+    // FIXME: would fit better in a generic Range/Tuple type.
+    if (options.ascending) {
+      this.validate({
+        ascendingValidator,
+        message: 'Path `{PATH}` must be an ascending range of Dates'
+      });
+    }
   }
 }
 TimeRange.schemaName = 'TimeRange';
@@ -20,7 +26,19 @@ mongoose.Schema.Types.TimeRange = TimeRange;
 
 module.exports = TimeRange;
 
-function validator(arr) {
+function validate(key, type) {
+  let delegate = create(type);
+
+  Object.defineProperties(delegate, {
+    paths: { value: { [key]: delegate } },
+    path: { value: () => delegate },
+    options: { value: { minlength: 2, maxlength: 2 } }
+  });
+
+  return arrayLengthValidators(delegate);
+}
+
+function ascendingValidator(arr) { 
   // not a required validator
   if (!arr) return true;
 
