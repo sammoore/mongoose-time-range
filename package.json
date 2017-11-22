@@ -1,6 +1,6 @@
 {
   "name": "mongoose-time-range",
-  "version": "0.2.0",
+  "version": "0.2.1-pre",
   "description": "A mongoose SchemaType for a range of Time in a given day.",
   "main": "index.js",
   "scripts": {
