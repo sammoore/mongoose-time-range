@@ -1,0 +1,3 @@
+[submodule "vendor/mongoose-time"]
+	path = vendor/mongoose-time
+	url = git@github.com:samtheprogram/mongoose-time.git
