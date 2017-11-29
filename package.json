@@ -4,7 +4,7 @@
   "description": "A mongoose SchemaType for a range of Time in a given day.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,8 @@
     "mongoose-time": "./vendor/mongoose-time"
   },
   "devDependencies": {
-    "mongoose": "~4.10.0"
+    "mongoose": "~4.10.0",
+    "mocha": "~4.0.1"
   },
   "peerDependencies": {
     "mongoose": "^4.10.0"
